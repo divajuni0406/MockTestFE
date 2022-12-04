@@ -1,0 +1,23 @@
+.bg-login {
+  min-height: 100vh;
+  background-color: rgb(42, 42, 42);
+}
+
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  padding-top: 50px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  border: 2px solid black;
+}
+
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */

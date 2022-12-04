@@ -1,0 +1,22 @@
+.bg-updateUser {
+  min-height: 100vh;
+  background-color: rgb(42, 42, 42);
+}
+
+.input-wrapper label {
+  color: white;
+}
+
+.input-wrapper input {
+  width: 100%;
+}
+
+.input-wrapper input::placeholder {
+  color: black;
+  text-align: center;
+}
+
+.add-btn {
+  color: black;
+  background-color: white;
+}
