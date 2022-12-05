@@ -5,10 +5,12 @@ export const userLogin = createAsyncThunk(
   "userLogin/userLogin",
   async ({ pinValue }, thunkAPI) => {
     try {
-      const response = await axios.post(`http://localhost:5000/login`, {
-        password: pinValue,
-      });
-      console.log(response.data, "aaaaaaaaaaaaaaaaaaaaaaaaaa");
+      const response = await axios.post(
+        `https://mock-test-be.vercel.app/login`,
+        {
+          password: pinValue,
+        }
+      );
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       if (error.response.data) {

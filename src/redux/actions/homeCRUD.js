@@ -6,7 +6,7 @@ export const getOneUser = createAsyncThunk(
   async ({ id }) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/get-user-data/${id}`
+        `https://mock-test-be.vercel.app/get-user-data/${id}`
       );
       return response;
     } catch (error) {
@@ -17,7 +17,9 @@ export const getOneUser = createAsyncThunk(
 
 export const getUsers = createAsyncThunk("getUsers/getAllUsers", async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/get-users-data`);
+    const response = await axios.get(
+      `https://mock-test-be.vercel.app/get-users-data`
+    );
     return response;
   } catch (error) {
     console.log(error);
@@ -31,14 +33,17 @@ export const addUser = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const response = await axios.post(`http://localhost:5000/add-user`, {
-        username,
-        email,
-        firstname,
-        lastname,
-        fullname,
-        address,
-      });
+      const response = await axios.post(
+        `https://mock-test-be.vercel.app/add-user`,
+        {
+          username,
+          email,
+          firstname,
+          lastname,
+          fullname,
+          address,
+        }
+      );
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       if (error.response.data) {
@@ -57,7 +62,7 @@ export const updateUser = createAsyncThunk(
   ) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/update-user/${id}`,
+        `https://mock-test-be.vercel.app/update-user/${id}`,
         {
           username,
           email,
@@ -82,7 +87,7 @@ export const deleteUser = createAsyncThunk(
   async ({ id }, thunkAPI) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/delete-user/${id}`
+        `https://mock-test-be.vercel.app/delete-user/${id}`
       );
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
